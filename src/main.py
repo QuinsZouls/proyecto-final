@@ -40,7 +40,7 @@ if __name__ == '__main__':
             print(progress)
         result = framesToVideo(job_id)
         if result:
-            print("Video Processed with job_id " + job_id)
+            print(f"Video Processed with job_id {job_id}")
 
     elif SERVER_TYPE == 'client':
         print('SERVER MODE: client')
