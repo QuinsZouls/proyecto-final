@@ -72,9 +72,7 @@ def framesToVideo(job_id):
     system(
         f"cd {tmp_path} && ffmpeg -r 25 -i frame-%01d.jpg -c:v libx264 -r 30 -pix_fmt yuv420p result.mp4")
     client.fput_object("result", f"{job_id}.mp4", f"{tmp_path}/result.mp4")
-    system(f"rm -rf {tmp_path}")
-    print("done")
-    return True
+    return True, tmp_path
 
 
 # videoToFrames(
